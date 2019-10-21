@@ -1,0 +1,11 @@
+plot(cars)
+hist(dados)
+hist(dados, breaks = 10, main = "Histogramas")
+hist(dados, labels = T,  breaks = c(0,5,10,20,30), main = "Histogramas")
+hist(dados, labels = T, ylim = c(0,10), breaks = 10, main = "Histogramas")
+
+grafico <- hist(dados, breaks = 10, main = "Histogramas")
+xaxis = seq(min(dados), max(dados), length = 10)
+yaxis = dnorm(xaxis, mean = mean(dados), sd(dados))
+yaxis = yaxis*diff(grafico$mids)*length(dados)
+lines(xaxis, yaxis, col = "red")
