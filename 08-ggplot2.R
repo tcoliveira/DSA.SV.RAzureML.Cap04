@@ -64,3 +64,14 @@ ggplot(data, aes(ymin = 0))+
   geom_rect(aes(xmin = left, xmax = right,
                 ymax = valor, colour = grupo, fill=grupo))+
   xlab('Num Obs') + ylab('Valor')
+
+#histograma
+ggplot(mtcars, aes(x=mpg), binwidth = 30)+ geom_histogram()
+
+#histograma
+ggplot(mtcars, aes(x=mpg), binwidth = 30)+ geom_bar()
+
+ggplot(mtcars, aes(x=as.factor(cyl), y = mpg,
+                   fill = as.factor(cyl))) + geom_boxplot()
+
+ggplot(mtcars, aes(x=as.factor(cyl), y = mpg)) + geom_boxplot(color = 'blue', fill = 'seagreen4')
